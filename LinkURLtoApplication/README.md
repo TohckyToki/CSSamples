@@ -4,7 +4,7 @@
 
 以上就是这种功能的具体作用，可以通过一个特殊的网址启动特定的桌面程序。
 
-具体实现可以参照[代码]()也可以看下方的描述自行考虑实现方法
+具体实现可以参照[代码](https://github.com/TohckyToki/CSSamples/blob/master/LinkURLtoApplication/README.md#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0)也可以看下方的描述自行考虑实现方法
 
 首先，实现功能前，可以先看一下Github里<kbd>Open in Desktop</kbd>选项里的地址,一般情况下应该是像下面这种的链接
 > x-github-client://openRepo/https://github.com/TohckyToki/CSSamples
@@ -12,14 +12,19 @@
 可以看到这个连接的url协议并不是常见的http或者https,而是x-github-client这种特殊协议
 
 接着我们可以打开系统注册表在HKEY_CLASSES_ROOT里搜索数据为x-github-client的项目
+
 ![图片1](./img/img1.png)
 
 如果有安装Github客户端的话这里应该能搜索到以下的结果
+
 ![图片2](./img/img2.png)
 
 这个项目全部展开的内容如下
+
 ![图片3](./img/img3.png)
+
 ![图片4](./img/img4.png)
+
 ![图片5](./img/img5.png)
 
 可以看到，这里基本就是把本地安装的exe和之前看到的特殊的协议进行了一个绑定，也就是说只要在注册表里创建一个把当前程序与一个特殊协议进行关联的项目就可以实现通过特殊网址打开本地程序的功能了。
